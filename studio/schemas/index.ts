@@ -1,4 +1,4 @@
 import blockContent from './blockContent'
-import post from './post'
+import pizza from './pizza'
 
-export const schemaTypes = [post, blockContent]
+export const schemaTypes = [pizza, blockContent]
