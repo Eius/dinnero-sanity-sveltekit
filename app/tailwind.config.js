@@ -10,7 +10,7 @@ export default {
         sm: '3rem',
         xl: '4rem',
         'xxl': '5rem',
-      }
+      },
     },
     colors: {
       "white": "#f3f3f3",
@@ -23,6 +23,7 @@ export default {
       "accent":
       {
         "red": "#da2c20",
+        "red-dark": "#c93f25",
         "green": "#6ba86d"
       }
     },
@@ -37,7 +38,7 @@ export default {
     fontFamily: {
       "sans": ["Port Lligat Slab", "ui-sans-serif", "system-ui", "-apple-system"],
       "title": ["Yanone Kaffeesatz", "ui-sans-serif", "system-ui", "-apple-system"],
-      "funny": ["Leckerli One", "ui-sans-serif", "system-ui", "-apple-system"],
+      "funny": ["Pacifico", "ui-sans-serif", "system-ui", "-apple-system"],
     },
     backgroundSize: {
       'cover': 'cover',

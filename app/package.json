@@ -12,8 +12,9 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
-		"@fontsource/leckerli-one": "^5.0.1",
-		"@fontsource/port-lligat-slab": "^5.0.1",
+		"@fontsource/leckerli-one": "^5.0.18",
+		"@fontsource/pacifico": "^5.0.8",
+		"@fontsource/port-lligat-slab": "^5.0.18",
 		"@fontsource/yanone-kaffeesatz": "^5.0.1",
 		"@iconify/svelte": "^3.1.6",
 		"@sanity/client": "^6.0.0",

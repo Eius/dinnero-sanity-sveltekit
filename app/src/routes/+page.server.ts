@@ -2,19 +2,35 @@ import groq from 'groq';
 import type { PageServerLoad } from './$types';
 import { client } from '$lib/utils/sanity';
 import { urlFor } from '$lib/utils/image';
-import type { Image } from '@sanity/types';
+import type { ImagePizza } from '$lib/types/ImagePizza';
 
 export const load: PageServerLoad = async () => {
-    const query = groq`*[_type == 'pizza'] | order(order asc) {title, image}`;
-    const pizzas: {title: string, image: Image}[] = await client.fetch(query);
-    const refinedPizzas: { title: string, imageUrl: string }[] = pizzas.map((pizza) => {
-        return {
-            title: pizza.title,
-            imageUrl: urlFor(pizza.image).url()
+    const query = groq`*[_type in ['pizza', "homepageSettings"]] | order(order asc) 
+    {_type, discount_title, discount_text, food_data, image}`;
+
+    const result = await client.fetch(query);
+    
+    const pizzas: ImagePizza[] = [];
+    let homepageSettings: {discount_title: string, discount_text: string | null} | undefined;
+
+    result.forEach((item) => {
+        if (item._type === 'pizza') {
+            if (item.image != null) 
+            {
+                pizzas.push({
+                    title: item.food_data.title,
+                    imageUrl: urlFor(item.image).url()
+                });   
+            }
+        } else if (item._type === 'homepageSettings') {
+          homepageSettings = item;
         }
     });
 
     return {
-		pizzas: refinedPizzas
+        pizzas,
+        homepageSettings
 	};
 };
+
+/* : {title: string, image: Image}[] */
