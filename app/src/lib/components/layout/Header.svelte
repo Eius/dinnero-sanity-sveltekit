@@ -16,7 +16,6 @@
         
         page.subscribe((value) => {
             currentHref = value.url.pathname;
-            console.log(currentHref);
         })
     })
 
@@ -61,7 +60,7 @@
 after:content-[''] after:pointer-events-none after:absolute after:-bottom-8 after:h-8 after:w-full after:from-secondary/60 after:bg-gradient-to-b">
     <div class="container bg-gray-500 grid grid-cols-2 lg:grid-cols-3">
         <!-- LOGO -->
-        <a href="/" class="col-span-1">
+        <a href="/" class="col-span-1 min-w-[120px] min-h-[46px]">
             <img src="/images/logo.webp" alt="Logo" class="max-w-[120px] w-full">
         </a>
         <!-- MOBILE MENU BUTTON -->

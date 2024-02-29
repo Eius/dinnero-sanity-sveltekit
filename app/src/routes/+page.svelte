@@ -4,8 +4,22 @@
 	import Icon from '@iconify/svelte';
 	import type { PageData } from './$types';
 	import contacts from '$lib/data/contacts';
+	import { onMount } from 'svelte';
 
 	export let data: PageData;
+
+	let header_image: HTMLImageElement;
+	let header_image_loaded = false;
+
+	onMount(() => {
+		if (header_image && header_image.complete)
+		{
+			header_image_loaded = true;
+		} else {
+			header_image.addEventListener("load", () => { header_image_loaded = true });
+		}
+	})
+	
 </script>
 
 <svelte:head>
@@ -13,9 +27,11 @@
 </svelte:head>
 
 <section>
-	<div class="flex items-center lg:justify-center w-full bg-[url('/images/header_image_1.jpg')] bg-cover bg-center bg-no-repeat aspect-[16/6] min-h-[200px]">
+	<div class="flex items-center lg:justify-center w-full bg-[url('/images/header_image_1_small.webp')] bg-cover bg-center bg-no-repeat aspect-[16/6] min-h-[200px]">
+		<img bind:this={header_image} class="absolute object-cover object-center block aspect-[16/6] min-h-[200px] transition-opacity duration-200 {header_image_loaded ? "opacity-100" : "opacity-0"}"
+		src="/images/header_image_1.webp" alt="pizza">
 		<!-- DESKTOP ONLY -->
-		<div class="hidden lg:flex flex-col justify-center">
+		<div class="hidden lg:flex flex-col justify-center z-10">
 			<h1 class="font-title font-semibold text-center text-white text-8xl uppercase leading-none">
 				Dinnero Pizza
 			</h1>
@@ -32,7 +48,7 @@
 			</p>
 		</div>
 	</div>
-	<div class="flex flex-col py-16 lg:py-32 items-center text-center bg-[url('/images/background_1.jpg')] bg-center bg-cover bg-scroll bg-no-repeat">
+	<div class="flex flex-col py-16 lg:py-32 items-center text-center bg-[url('/images/background_1.webp')] bg-center bg-cover bg-scroll bg-no-repeat">
 		<!-- MOBILE ONLY -->
 		<div class="flex flex-col pb-16 items-center lg:hidden w-full text-white font-semibold">
 			<p class="text-2xl font-sans">Objednávky</p>
