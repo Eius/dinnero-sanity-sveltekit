@@ -6,7 +6,7 @@
 
 <footer class="pt-16 bg-secondary flex flex-col gap-12 items-center">
 	<a href="/">
-		<img src="/images/logo.webp" alt="Logo" class="px-4 max-w-[232px] w-full">
+		<img src="/images/logo.webp" alt="Logo" class="px-4 max-w-[232px] w-full" width="651" height="250">
 	</a> 
 	<ul class="flex gap-8 font-title text-2xl text-white">
 		<li>
