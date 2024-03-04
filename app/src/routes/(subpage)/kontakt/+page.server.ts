@@ -13,7 +13,9 @@ type OpeningHoursData = {
     tuesday: DayData,
     wednesday: DayData,
     thursday: DayData,
-    friday: DayData
+    friday: DayData,
+    saturday: DayData,
+    sunday: DayData
 };
 
 type QueryData = {
@@ -36,7 +38,9 @@ function organizeOpeningHours(data: OpeningHoursData): Record<string, DayData> {
         Utorok: data.tuesday,
         Streda: data.wednesday,
         Štvrtok: data.thursday,
-        Piatok: data.friday
+        Piatok: data.friday,
+        Sobota: data.saturday,
+        Nedeľa: data.sunday
     };
     return openingHours;
 };

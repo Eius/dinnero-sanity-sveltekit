@@ -30,5 +30,15 @@ export default defineType({
       name: "friday",
       type: "day"
     },
+    {
+      title: "Sobota",
+      name: "saturday",
+      type: "day"
+    },
+    {
+      title: "Nedeľa",
+      name: "sunday",
+      type: "day"
+    },
   ]
 })

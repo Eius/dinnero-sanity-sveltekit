@@ -60,9 +60,13 @@
                 <h2 class="pb-4 text-4xl font-title text-center md:text-start">Otváracie hodiny</h2>
                 <div class="grid grid-cols-2 max-w-[270px]">
                     {#if openingHours}
-                        {#each Object.entries(openingHours) as [dayName, {start, end}]}
+                        {#each Object.entries(openingHours) as [dayName, dayData]}
                         <p class="col-span-1">{dayName}</p>
-                        <p class="col-span-1 text-end">{formatTime(start)} - {formatTime(end)}</p>
+                        {#if dayData.end.hours}
+                        <p class="col-span-1 text-end">{formatTime(dayData?.start)} - {formatTime(dayData?.end)}</p>
+                        {:else}
+                        <p class="col-span-1 text-end text-accent-red">Zatvorené</p>
+                        {/if}
                         {/each}
                     {/if}
                 </div>
@@ -80,42 +84,3 @@
         </div>
     </div>
 </div>
-
-<!-- <div class="bg-[url(/images/header_image_2.jpg)] flex items-center justify-center min-h-[180px] w-full bg-no-repeat bg-cover bg-center aspect-[16/4]" />
-<p class="pt-16 block lg:hidden text-white text-center text-5xl font-bold tracking-wider uppercase">Kontakt</p>
-<div class="py-16 container grid grid-cols-2 lg:grid-cols-3 gap-8">
-    <div class="col-span-2 lg:col-span-1 flex flex-col md:flex-row lg:flex-col items-center md:justify-between lg:justify-start gap-16">
-        <div class="flex flex-col gap-6">
-            <h2 class="text-white text-4xl font-title tracking">Ozvite sa nám</h2>
-            <div class="flex flex-col gap-4 text-white text-xl">
-                <div class="flex items-center gap-2">
-                    <Icon icon="ic:baseline-phone" />
-                    <p>{contacts?.phone_number}</p>
-                </div>
-                <div class="flex items-center gap-2">
-                    <Icon icon="ic:round-email" />
-                    <p>{contacts?.email}</p>
-                </div>
-                <div class="flex items-center gap-2">
-                    <Icon icon="mdi:location" />
-                    <p>{contacts?.address}</p>
-                </div>
-                <div class="flex items-center gap-2">
-                    <Icon icon="ic:baseline-facebook" />
-                    <p>{contacts?.facebook}</p>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col gap-6">
-            <h2 class="text-white text-4xl font-title tracking">Otváracie hodiny</h2>
-            <div class="grid grid-cols-3 max-w-[270px] text-white text-xl">
-                {#if openingHours}
-                    {#each Object.entries(openingHours) as [dayName, {start, end}]}
-                    <p class="col-span-1">{dayName}</p>
-                    <p class="col-span-2 text-end">{formatTime(start)} - {formatTime(end)}</p>
-                    {/each}
-                {/if}
-            </div>
-        </div>
-    </div>
-</div> -->
