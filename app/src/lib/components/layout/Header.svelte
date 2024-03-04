@@ -39,9 +39,10 @@
 
 <!-- MOBILE MENU -->
 <section class="pt-6 fixed left-0 top-0 right-0 bottom-0 bg-primary z-50 {mobileMenuVisibile ? "translate-x-0" : "-translate-x-full"} transition-transform ease-in-out">
-    <ul class="flex flex-col gap-4 font-title text-white text-3xl font-semibold uppercase">
+    <ul class="flex flex-col gap-4 font-title text-white text-3xl font-semibold uppercase justify-bet">
         {#each mobileMenuItems as {title, href, icon}}
             <li>
+                <a href="" ></a>
                 <a class="px-6 py-2 flex justify-center gap-4" class:active={currentHref == href} href={href} on:click={closeMobileMenu}>
                     <span class="relative current-underline">
                         {title}

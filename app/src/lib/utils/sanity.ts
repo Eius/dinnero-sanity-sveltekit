@@ -28,6 +28,8 @@ export async function getPost(slug: string): Promise<Post> {
 	});
 }
 
+
+
 export interface Post {
 	_type: 'post';
 	_createdAt: string;

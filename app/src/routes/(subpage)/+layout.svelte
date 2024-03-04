@@ -17,8 +17,8 @@
 </script>
 
 <div class="flex items-center justify-center min-h-[180px] w-full bg-[url('/images/header_image_2_small.webp')] bg-no-repeat bg-cover bg-center aspect-[16/4]">
-    <img bind:this={header_image} class="absolute object-cover object-center block aspect-[16/4] transition-opacity duration-200 
-        {header_image_loaded ? "opacity-100" : "opacity-0"}" src="/images/header_image_2.jpg" alt="pizza">
+    <img bind:this={header_image} class="absolute min-h-[180px] object-cover object-center w-full block aspect-[16/4] transition-opacity duration-200 
+        {header_image_loaded ? "opacity-100" : "opacity-0"}" src="/images/header_image_2.jpg" alt="pizza" width="1920" height="700">
     <p class="relative -bottom-4 text-white font-bold tracking-wider uppercase
     hidden lg:block lg:text-6xl xl:text-7xl xxl:text-8xl">
         {$currentPage}
