@@ -13,12 +13,12 @@
 	import "@fontsource/yanone-kaffeesatz/700.css"
 	import "@fontsource/pacifico/400.css"
 	import "@fontsource/port-lligat-slab/400.css"
-	
-
+	import NavigationCover from "$lib/components/layout/NavigationCover.svelte";
 </script>
 
+<NavigationCover />
 <Header />
-<main>
-	<slot />
-</main>
+	<main>
+		<slot />
+	</main>
 <Footer />

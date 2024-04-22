@@ -38,7 +38,7 @@
 </script>
 
 <!-- MOBILE MENU -->
-<section class="pt-6 fixed left-0 top-0 right-0 bottom-0 bg-primary z-50 {mobileMenuVisibile ? "translate-x-0" : "-translate-x-full"} transition-transform ease-in-out">
+<section class="pt-6 fixed left-0 top-0 right-0 bottom-0 bg-primary z-40 {mobileMenuVisibile ? "translate-x-0" : "-translate-x-full"} transition-transform ease-in-out">
     <ul class="flex flex-col gap-4 font-title text-white text-3xl font-semibold uppercase justify-bet">
         {#each mobileMenuItems as {title, href, icon}}
             <li>
@@ -57,7 +57,7 @@
 </section>
 
 <!-- HEADER -->
-<header class="py-3 fixed top-0 left-0 right-0 bg-secondary {scrolled ? "bg-opacity-100" : "bg-opacity-60"} transition-all duration-150 z-40
+<header class="py-3 fixed top-0 left-0 right-0 bg-secondary {scrolled ? "bg-opacity-100" : "bg-opacity-60"} transition-all duration-150 z-30
 after:content-[''] after:pointer-events-none after:absolute after:-bottom-8 after:h-8 after:w-full after:from-secondary/60 after:bg-gradient-to-b">
     <div class="container bg-gray-500 grid grid-cols-2 lg:grid-cols-3">
         <!-- LOGO -->

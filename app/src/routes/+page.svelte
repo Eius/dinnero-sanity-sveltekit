@@ -27,12 +27,12 @@
 </svelte:head>
 
 <section>
-	<div class="flex items-center lg:justify-center w-full bg-[url('/images/header_image_1_small.webp')] bg-cover bg-center bg-no-repeat aspect-[16/6] min-h-[200px]">
+	<div class="flex lg:items-center lg:justify-center w-full bg-[url('/images/header_image_1_small.webp')] bg-cover bg-center bg-no-repeat aspect-[16/6] min-h-[200px]">
 		<img bind:this={header_image}
-		class="absolute object-cover object-center block aspect-[16/6] transition-opacity duration-300 {header_image_loaded ? "opacity-100" : "opacity-0"}"
+		class="object-cover object-center block aspect-[16/6] transition-opacity duration-300 {header_image_loaded ? "opacity-100" : "opacity-0"}"
 		src="/images/header_image_1.webp" alt="pizza">
 		<!-- DESKTOP ONLY -->
-		<div class="hidden lg:flex flex-col justify-center z-10">
+		<div class="absolute hidden lg:flex flex-col justify-center z-10">
 			<h1 class="font-title font-semibold text-center text-white text-8xl uppercase leading-none">
 				Dinnero Pizza
 			</h1>
